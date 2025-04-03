@@ -1,0 +1,87 @@
+<scroll-view class="container">
+  <!-- 用户信息卡片 -->
+
+  <!-- 会员状态卡片 -->
+  <view class="member-card">
+    <view class="member-info">
+      <text class="member-title">会员状态</text>
+      <text class="member-status">免费用户</text>
+    </view>
+    <button class="upgrade-btn">升级会员</button>
+  </view>
+
+  <!-- 功能列表 -->
+  <view class="menu-list">
+    <view class="menu-item" bindtap="showAgreement">
+      <view class="menu-left">
+        <image class="menu-icon" src="/assets/icons/agreement.png"></image>
+        <text>用户协议</text>
+      </view>
+      <text class="arrow">›</text>
+    </view>
+    
+    <view class="menu-item" bindtap="showPrivacy">
+      <view class="menu-left">
+        <image class="menu-icon" src="/assets/icons/privacy.png"></image>
+        <text>隐私政策</text>
+      </view>
+      <text class="arrow">›</text>
+    </view>
+    
+    <view class="menu-item" bindtap="showAbout">
+      <view class="menu-left">
+        <image class="menu-icon" src="/assets/icons/about.png"></image>
+        <text>关于我们</text>
+      </view>
+      <text class="arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 用户协议弹出层 -->
+  <van-popup
+    show="{{ showAgreement }}"
+    round
+    position="bottom"
+    custom-style="height: 80%; z-index: 9999999;"
+  >
+    <view class="popup-content">
+      <view class="popup-title">用户协议</view>
+      <view class="popup-text">
+        这里是用户协议内容...
+      </view>
+      <button class="popup-btn" bindtap="closePopup">我知道了</button>
+    </view>
+  </van-popup>
+
+  <!-- 隐私政策弹出层 -->
+  <van-popup
+    show="{{ showPrivacy }}"
+    round
+    position="bottom"
+    custom-style="height: 80%; z-index: 9999999;"
+  >
+    <view class="popup-content">
+      <view class="popup-title">隐私政策</view>
+      <view class="popup-text">
+        这里是隐私政策内容...
+      </view>
+      <button class="popup-btn" bindtap="closePopup">我知道了</button>
+    </view>
+  </van-popup>
+
+  <!-- 关于我们弹出层 -->
+  <van-popup
+    show="{{ showAbout }}"
+    round
+    position="bottom"
+    custom-style="height: 80%; z-index: 9999999;"
+  >
+    <view class="popup-content">
+      <view class="popup-title">关于我们</view>
+      <view class="popup-text">
+        这里是关于我们的内容...
+      </view>
+      <button class="popup-btn" bindtap="closePopup">我知道了</button>
+    </view>
+  </van-popup>
+</scroll-view> 
