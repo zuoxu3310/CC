@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "搜索字幕",
-  "navigationBarTextStyle": "black",
-  "navigationBarBackgroundColor": "#f5f5f7",
-  "usingComponents": {
-    "van-search": "@vant/weapp/search/index"
-  }
-} 

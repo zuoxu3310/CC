@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索字幕 - 字幕机</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+                Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #fff;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+        .nav-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+        }
+        .search-bar {
+            border-radius: 12px;
+            background: #f5f5f7;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .search-input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            margin-left: 8px;
+            font-size: 16px;
+        }
+        .search-input:focus {
+            outline: none;
+        }
+        .history-section, .search-results {
+            margin-bottom: 24px;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 16px;
+            color: #86868b;
+        }
+        .clear-history {
+            font-size: 14px;
+            color: #0A84FF;
+        }
+        .history-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .history-tag {
+            background: #f5f5f7;
+            border-radius: 16px;
+            padding: 8px 16px;
+            font-size: 14px;
+            color: #333;
+        }
+        .file-item {
+            background: #f5f5f7;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.2s;
+        }
+        .file-item:active {
+            transform: scale(0.98);
+            background: #eaeaea;
+        }
+        .file-name {
+            font-size: 16px;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .file-date {
+            font-size: 14px;
+            color: #86868b;
+        }
+        .back-btn {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+            font-size: 28px;
+            color: #0A84FF;
+        }
+    </style>
+</head>
+<body class="pb-8">
+    <header class="pt-2 px-6 pb-4 relative">
+        <a href="home.html" class="back-btn">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <h1 class="nav-title text-center">搜索字幕</h1>
+    </header>
+
+    <main class="px-6">
+        <!-- 搜索栏 -->
+        <div class="search-bar">
+            <i class="fas fa-search text-gray-400"></i>
+            <input type="text" class="search-input" placeholder="电影请输入IMDB ID,剧集请输入TMDB ID S01E01">
+        </div>
+
+        <!-- 搜索历史 -->
+        <section class="history-section">
+            <div class="section-header">
+                <h2 class="section-title">搜索历史</h2>
+                <button class="clear-history">清除</button>
+            </div>
+            
+            <div class="history-tags">
+                <div class="history-tag">tt0111161</div>
+                <div class="history-tag">tt0109830</div>
+                <div class="history-tag">1396 S01E01</div>
+                <div class="history-tag">tt0068646</div>
+            </div>
+        </section>
+
+        <!-- 搜索结果 -->
+        <section class="search-results">
+            <div class="section-header">
+                <h2 class="section-title">搜索结果</h2>
+            </div>
+            
+            <div class="file-list">
+                <div class="file-item flex justify-between items-center">
+                    <div class="file-info">
+                        <p class="file-name">The Shawshank Redemption (1994)</p>
+                        <p class="file-date">简体中文 SRT</p>
+                    </div>
+                    <span class="text-2xl text-gray-400">›</span>
+                </div>
+                
+                <div class="file-item flex justify-between items-center">
+                    <div class="file-info">
+                        <p class="file-name">The Shawshank Redemption (1994)</p>
+                        <p class="file-date">繁体中文 SRT</p>
+                    </div>
+                    <span class="text-2xl text-gray-400">›</span>
+                </div>
+                
+                <div class="file-item flex justify-between items-center">
+                    <div class="file-info">
+                        <p class="file-name">The Shawshank Redemption (1994)</p>
+                        <p class="file-date">英文 SRT</p>
+                    </div>
+                    <span class="text-2xl text-gray-400">›</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
